@@ -73,7 +73,6 @@ public class DBsql extends JFrame implements ActionListener
 		top.add(urlText,gc);
 		
 		url = new JTextField(25);
-		url.setEditable(false);
 		url.setText(tallaghtDB);
 		gc.gridx =1;
 		gc.gridy =2;
@@ -568,6 +567,7 @@ public class DBsql extends JFrame implements ActionListener
 		
 		if(e.getSource()==connect)
 		{
+			ta.setText("");
 			try {
 				OracleDataSource ods = new OracleDataSource();
 
