@@ -190,9 +190,9 @@ public class DBsql extends JFrame implements ActionListener
 		try
 		{
 			Statement stmt = conn.createStatement();
-			stmt.executeUpdate("create sequence prod_seq start with 27 increment by 1");
+			stmt.executeUpdate("create sequence prod_seq start with 32 increment by 1");
 			stmt.executeUpdate("create sequence empId_seq start with 5679 increment by 1");
-			stmt.executeUpdate("create sequence digi_seq start with 18 increment by 1");
+			stmt.executeUpdate("create sequence digi_seq start with 22 increment by 1");
 			stmt.executeUpdate("create sequence elec_seq start with 10 increment by 1");
 			stmt.executeUpdate("create sequence dvd_seq start with 6 increment by 1");
 			stmt.executeUpdate("create sequence game_seq start with 5 increment by 1");
