@@ -193,16 +193,16 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.executeUpdate("create sequence prod_seq start with 32 increment by 1");
 			stmt.executeUpdate("create sequence empId_seq start with 5679 increment by 1");
 			stmt.executeUpdate("create sequence digi_seq start with 22 increment by 1");
-			stmt.executeUpdate("create sequence elec_seq start with 10 increment by 1");
+			stmt.executeUpdate("create sequence elec_seq start with 11 increment by 1");
 			stmt.executeUpdate("create sequence dvd_seq start with 6 increment by 1");
-			stmt.executeUpdate("create sequence game_seq start with 5 increment by 1");
+			stmt.executeUpdate("create sequence game_seq start with 9 increment by 1");
 			stmt.executeUpdate("create sequence cd_seq start with 9 increment by 1");
 			stmt.executeUpdate("create sequence song_seq start with 106 increment by 1");
 			stmt.executeUpdate("create sequence artist_seq start with 9 increment by 1");
-			stmt.executeUpdate("create sequence console_seq start with 4 increment by 1");
+			stmt.executeUpdate("create sequence console_seq start with 5 increment by 1");
 			stmt.executeUpdate("create sequence sound_dock_seq start with 3 increment by 1");
 			stmt.executeUpdate("create sequence headphones_seq start with 5 increment by 1");
-			stmt.executeUpdate("create sequence transaction_seq start with 1000000 increment by 1");
+			stmt.executeUpdate("create sequence transaction_seq start with 1000017 increment by 1");
 			ta.append("Sequences created successfully.");
 		} catch (SQLException ex)
 		{
