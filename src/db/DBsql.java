@@ -16,7 +16,7 @@ public class DBsql extends JFrame implements ActionListener
 	private JPanel top,bottom;
 	private JScrollPane js;
 	private JTextArea ta;
-	
+
 	private String passw,tallaghtDB,localDB;
 	private JButton connect;
 	private JLabel selection,urlText,uName,pass,empty;
@@ -24,10 +24,10 @@ public class DBsql extends JFrame implements ActionListener
 	private JPasswordField pswd;
 	private JComboBox<String> jcb;
 	private GridBagConstraints gc;
-	
+
 	private Connection conn;
 	private Statement stmt;
-	
+
 	public DBsql()
 	{
 		frame = new JFrame();
@@ -40,13 +40,13 @@ public class DBsql extends JFrame implements ActionListener
 		gc = new GridBagConstraints();
 		tallaghtDB = "jdbc:oracle:thin:@//10.10.2.7:1521/global1";
 		localDB = "jdbc:oracle:thin:HR/@localhost:1521:XE";
-		
-		
-		
+
+
+
 		top = new JPanel(new GridBagLayout());
 		top.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
 		String[] options = {"Tallaght Database","Local Database"};
-		
+
 		selection = new JLabel("Select a Database Connection:");
 		gc.gridx =0;
 		gc.gridy =0;
@@ -54,7 +54,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(selection,gc);
-		
+
 		jcb = new JComboBox<>(options);
 		jcb.addActionListener(this);
 		gc.gridx =0;
@@ -63,7 +63,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(jcb,gc);
-		
+
 		urlText = new JLabel("URL:");
 		gc.gridx =0;
 		gc.gridy =2;
@@ -71,7 +71,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(urlText,gc);
-		
+
 		url = new JTextField(25);
 		url.setText(tallaghtDB);
 		gc.gridx =1;
@@ -80,14 +80,14 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(url,gc);
-		
+
 		empty = new JLabel("               ");
 		gc.gridx =0;
 		gc.gridy =3;
 		gc.weightx=1.0;
 		gc.weighty=1.0;
 		top.add(empty,gc);
-		
+
 		uName = new JLabel("Username: ");
 		gc.gridx =0;
 		gc.gridy =4;
@@ -95,7 +95,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(uName,gc);
-		
+
 		username = new JTextField(25);
 		gc.gridx =1;
 		gc.gridy =4;
@@ -103,7 +103,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(username,gc);
-		
+
 		pass = new JLabel("Password: ");
 		gc.gridx =0;
 		gc.gridy =5;
@@ -111,7 +111,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(pass,gc);
-		
+
 		pswd = new JPasswordField(25);
 		gc.gridx =1;
 		gc.gridy =5;
@@ -119,7 +119,7 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weighty=1.0;
 		gc.anchor = GridBagConstraints.NORTHWEST;
 		top.add(pswd,gc);
-		
+
 		connect = new JButton("Connect");
 		connect.addActionListener(this);
 		gc.gridx =0;
@@ -127,11 +127,11 @@ public class DBsql extends JFrame implements ActionListener
 		gc.weightx=1.0;
 		gc.weighty=1.0;
 		top.add(connect,gc);
-		
+
 		frame.add(top);
-		
-		
-		
+
+
+
 		bottom = new JPanel();
 		js = new JScrollPane();
 		js.setPreferredSize(new Dimension(400,250));
@@ -139,7 +139,7 @@ public class DBsql extends JFrame implements ActionListener
 		js.add(ta);
 		bottom.add(ta);
 		frame.add(bottom);
-		
+
 		frame.setVisible(true);
 	}
 
@@ -149,38 +149,146 @@ public class DBsql extends JFrame implements ActionListener
 		try
 		{
 			stmt = conn.createStatement();
-			stmt.execute("DROP TABLE console");
-			stmt.execute("DROP TABLE sound_dock");
+			try{
+				stmt.execute("DROP TABLE console CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE sound_dock CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE headphones CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE cd_artist CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE song CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE artist CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE game CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE cd CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE dvd CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE electronic CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE digital_product CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE transaction CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE product CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP TABLE employee CASCADE CONSTRAINTS");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE transaction_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE headphones_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE sound_dock_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE console_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE artist_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE song_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE cd_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE game_seq");
+			}catch (SQLException ex){
 
-			stmt.execute("DROP TABLE headphones");
-			stmt.execute("DROP TABLE cd_artist");
-			stmt.execute("DROP TABLE song");
-			stmt.execute("DROP TABLE artist");
-			stmt.execute("DROP TABLE game");
-			stmt.execute("DROP TABLE cd");
-			stmt.execute("DROP TABLE dvd");
-			stmt.execute("DROP TABLE electronic");
-			stmt.execute("DROP TABLE digital_product");
-			stmt.execute("DROP TABLE transaction");
-			stmt.execute("DROP TABLE product");
-			stmt.execute("DROP TABLE employee");
-			stmt.execute("DROP SEQUENCE transaction_seq");
-			stmt.execute("DROP SEQUENCE headphones_seq");
-			stmt.execute("DROP SEQUENCE sound_dock_seq");
-			stmt.execute("DROP SEQUENCE console_seq");
-			stmt.execute("DROP SEQUENCE artist_seq");
-			stmt.execute("DROP SEQUENCE song_seq");
-			stmt.execute("DROP SEQUENCE cd_seq");
-			stmt.execute("DROP SEQUENCE game_seq");
-			stmt.execute("DROP SEQUENCE dvd_seq");
-			stmt.execute("DROP SEQUENCE elec_seq");
-			stmt.execute("DROP SEQUENCE digi_seq");
-			stmt.execute("DROP SEQUENCE prod_seq");
-			stmt.execute("DROP SEQUENCE empId_seq");
+			}
+			try{
+				stmt.execute("DROP SEQUENCE dvd_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE elec_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE digi_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE prod_seq");
+			}catch (SQLException ex){
+				
+			}
+			try{
+				stmt.execute("DROP SEQUENCE empId_seq");
+			}catch (SQLException ex){
+				
+			}
+
 			ta.append("All tables successfully dropped.\n");
 		} catch (SQLException ex)
 		{
-			ta.append("ERROR");
+
 		}
 	}
 
@@ -242,7 +350,7 @@ public class DBsql extends JFrame implements ActionListener
 		ta.append("\nInserting data...");
 		try
 		{
-//			Insert values into product table
+			//			Insert values into product table
 			Statement stmt = conn.createStatement();
 			stmt.execute("insert into PRODUCT values('P0000001','CD',15)");
 			stmt.execute("insert into PRODUCT values('P0000002','CD',10)");
@@ -275,8 +383,8 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into PRODUCT values('P0000029','GAME',10)");
 			stmt.execute("insert into PRODUCT values('P0000030','GAME',5)");
 			stmt.execute("insert into PRODUCT values('P0000031','GAME',8)");
-			
-			
+
+
 			stmt.execute("insert into DIGITAL_PRODUCT values('D0000001','Rock',12,'P0000001')");
 			stmt.execute("insert into DIGITAL_PRODUCT values('D0000002','Electronica',0,'P0000002')");
 			stmt.execute("insert into DIGITAL_PRODUCT values('D0000003','Soul',0,'P0000003')");
@@ -298,8 +406,8 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into DIGITAL_PRODUCT values('D0000019','Action',18,'P0000029')");
 			stmt.execute("insert into DIGITAL_PRODUCT values('D0000020','Adventure',0,'P0000030')");
 			stmt.execute("insert into DIGITAL_PRODUCT values('D0000021','Adventure',0,'P0000031')");
-			
-			
+
+
 			stmt.execute("insert into ELECTRONIC values('E0000001','Sony','Playstation 4','Black','P0000018')");
 			stmt.execute("insert into ELECTRONIC values('E0000002','Microsoft','Xbox 360','Black','P0000019')");
 			stmt.execute("insert into ELECTRONIC values('E0000003','Beats','Wireless Over-Ear Headphones','Black','P0000020')");
@@ -310,8 +418,8 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into ELECTRONIC values('E0000008','Samsung','DA-E750','Red','P0000025')");
 			stmt.execute("insert into ELECTRONIC values('E0000009','Nintendo','Wii U','Black','P0000026')");
 			stmt.execute("insert into ELECTRONIC values('E0000010','Microsoft','Xbox One','Black','P0000027')");
-			
-			
+
+
 			stmt.execute("insert into CD values('C0000001',68,'AM','Domino',9.50,16.99,'D0000001')");
 			stmt.execute("insert into CD values('C0000002',72,'Random Access Memories','Columbia',10.50,18.99,'D0000002')");
 			stmt.execute("insert into CD values('C0000003',75,'Love in the Future','Columbia',9.49,17.99,'D0000003')");
@@ -320,8 +428,8 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into CD values('C0000006',53,'Native','Interscope Records',9.60,15.99,'D0000006')");
 			stmt.execute("insert into CD values('C0000007',49,'Abbey Road','EMI',6.49,11.99,'D0000007')");
 			stmt.execute("insert into CD values('C0000008',59,'Aenima','Volcano',8.50,16.99,'D0000008')");
-			
-			
+
+
 			stmt.execute("insert into ARTIST values('A0000001','Arctic Monkeys')");
 			stmt.execute("insert into ARTIST values('A0000002','Daft Punk')");
 			stmt.execute("insert into ARTIST values('A0000003','John Legend')");
@@ -330,8 +438,8 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into ARTIST values('A0000006','One Republic')");
 			stmt.execute("insert into ARTIST values('A0000007','The Beatles')");
 			stmt.execute("insert into ARTIST values('A0000008','Tool')");
-			
-			
+
+
 			stmt.execute("insert into CD_ARTIST values('C0000001','A0000001')");
 			stmt.execute("insert into CD_ARTIST values('C0000002','A0000002')");
 			stmt.execute("insert into CD_ARTIST values('C0000003','A0000003')");
@@ -340,8 +448,8 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into CD_ARTIST values('C0000006','A0000006')");
 			stmt.execute("insert into CD_ARTIST values('C0000007','A0000007')");
 			stmt.execute("insert into CD_ARTIST values('C0000008','A0000008')");
-			
-			
+
+
 			stmt.execute("insert into SONG values('S0000001','3:12','Do I Wanna Know?','C0000001')");
 			stmt.execute("insert into SONG values('S0000002','4:12','R U Mine?','C0000001')");
 			stmt.execute("insert into SONG values('S0000003','4:02','One For The Road','C0000001')");
@@ -447,15 +555,15 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into SONG values('S0000103','3:58','Aenema','C0000008')");
 			stmt.execute("insert into SONG values('S0000104','3:45','(-) Ions','C0000008')");
 			stmt.execute("insert into SONG values('S0000105','5:01','Third Eye','C0000008')");
-			
-			
+
+
 			stmt.execute("insert into DVD values('D0000001',135,'Captain Phillips','Columbia Pictures',12.58,26.99,'D0000009')");
 			stmt.execute("insert into DVD values('D0000002',118,'Dallas Buyers Club','Focus Features',13.50,24.99,'D0000010')");
 			stmt.execute("insert into DVD values('D0000003',91,'Gravity','Warner Brothers',12.55,24.99,'D0000011')");
 			stmt.execute("insert into DVD values('D0000004',146,'The Hunger Games - Catching Fire','Lionsgate',13.60,25.99,'D0000012')");
 			stmt.execute("insert into DVD values('D0000005',113,'Thor - The Dark World','Walt Disney',11.59,21.99,'D0000013')");
-			
-			
+
+
 			stmt.execute("insert into GAME values('G0000001','UBI SOFT','Sony Playstation 4','Assassin''s Creed IV Black Flag',26.40,45.99,'D0000014')");
 			stmt.execute("insert into GAME values('G0000002','Activision','Microsoft Xbox 360','Call of Duty - Ghosts',18.20,26.99,'D0000015')");
 			stmt.execute("insert into GAME values('G0000003','Rockstar Games','Microsoft Xbox 360','Grand Theft Auto V',26.50,44.99,'D0000016')");
@@ -464,20 +572,20 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into GAME values('G0000006','EA Games','Microsoft Xbox One','Titanfall',25.40,43.99,'D0000019')");
 			stmt.execute("insert into GAME values('G0000007','Ubisoft','Nintendo Wii U','Rayman Legends',10.20,16.99,'D0000020')");
 			stmt.execute("insert into GAME values('G0000008','Nintendo','Nintendo Wii U','Super Mario Bros.U',23.40,31.99,'D0000021')");
-			
-			
+
+
 			stmt.execute("insert into CONSOLE values('L0000001',500,'Y',1,200,260,'E0000001')");
 			stmt.execute("insert into CONSOLE values('L0000002',4,'Y',1,120,200,'E0000002')");
 			stmt.execute("insert into CONSOLE values('L0000003',32,'Y',1,160,250,'E0000009')");
 			stmt.execute("insert into CONSOLE values('L0000004',500,'Y',2,420,499.99,'E0000010')");
-			
-			
+
+
 			stmt.execute("insert into HEADPHONES values('H0000001','Y','N','Y',242.69,360.95,'E0000003')");
 			stmt.execute("insert into HEADPHONES values('H0000002','Y','N','Y',88.50,119.99,'E0000004')");
 			stmt.execute("insert into HEADPHONES values('H0000003','N','N','Y',21.50,31.99,'E0000005')");
 			stmt.execute("insert into HEADPHONES values('H0000004','N','Y','Y',2.50,6.99,'E0000006')");
-			
-			
+
+
 			stmt.execute("insert into SOUND_DOCK values('SD0000001','N',60,'Y',142.50,199.99,'E0000007')");
 			stmt.execute("insert into SOUND_DOCK values('SD0000002','Y',100,'Y',425.90,589.99,'E0000008')");
 			// employee inserts
@@ -526,7 +634,7 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 2, 1234,'P0000007')"); //23.98
 			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 1, 1234,'P0000008')"); //16.99
 			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 1, 1234,'P0000004')"); //19.99
-			
+
 			ta.append("Data inserted successfully.");
 		} catch (SQLException ex)
 		{
@@ -564,7 +672,7 @@ public class DBsql extends JFrame implements ActionListener
 		{
 			url.setText(localDB);
 		}
-		
+
 		if(e.getSource()==connect)
 		{
 			ta.setText("");
@@ -577,7 +685,7 @@ public class DBsql extends JFrame implements ActionListener
 				ods.setPassword(passw);
 				conn = ods.getConnection();
 				ta.append("Connection established.\n");
-				
+
 				dropTables();
 				createSequence();
 				createTables();
