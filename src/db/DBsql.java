@@ -592,26 +592,26 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into EMPLOYEE values(1234, 'Horatio','McTiernan', 50,'Old Town','Maynooth','Kildare','4575885P',1234,'N')");
 			stmt.execute("insert into EMPLOYEE values(5678, 'Steve','The Manager', 12,'New Town','Maynooth','Kildare','985845D',5678,'Y')");
 			// transaction inserts
-			stmt.execute("insert into transaction values(1000000, '01Jan2014', 'S', 224.98, 1, 1234,'P0000024')");
-			stmt.execute("insert into transaction values(1000000, '01Jan2014', 'S', 224.98, 1, 1234,'P0000003')");
-			stmt.execute("insert into transaction values(1000001, '30Aug2013', 'S', 302.98, 1, 1234,'P0000018')");
-			stmt.execute("insert into transaction values(1000001, '30Aug2013', 'S', 302.98, 1, 1234,'P0000010')");
-			stmt.execute("insert into transaction values(1000001, '30Aug2013', 'S', 302.98, 1, 1234,'P0000003')");
-			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 770.95, 2, 5678,'P0000001')");
-			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 770.95, 1, 5678,'P0000009')");
-			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 770.95, 1, 5678,'P0000021')");
-			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 770.95, 1, 5678,'P0000025')");
+			stmt.execute("insert into transaction values(1000000, '01Jan2014', 'S', 199.99, 1, 1234,'P0000024')");
+			stmt.execute("insert into transaction values(1000000, '01Jan2014', 'S', 17.99, 1, 1234,'P0000003')");
+			stmt.execute("insert into transaction values(1000001, '30Aug2013', 'S', 260, 1, 1234,'P0000018')");
+			stmt.execute("insert into transaction values(1000001, '30Aug2013', 'S', 24.99, 1, 1234,'P0000010')");
+			stmt.execute("insert into transaction values(1000001, '30Aug2013', 'S', 17.99, 1, 1234,'P0000003')");
+			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 16.99, 2, 5678,'P0000001')");
+			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 26.99, 1, 5678,'P0000009')");
+			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 119.99, 1, 5678,'P0000021')");
+			stmt.execute("insert into transaction values(1000002, '25Apr2013', 'S', 589.99, 1, 5678,'P0000025')");
 			stmt.execute("insert into transaction values(1000003, '16Mar2013', 'R', 16.99, 1, 5678,'P0000001')");
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 1, 1234,'P0000004')");
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 1, 1234,'P0000018')");
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 1, 1234,'P0000017')");
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 2, 1234,'P0000006')");
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 1, 1234,'P0000020')"); //360.95
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 1, 1234,'P0000022')"); //31.99
-			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 1319.89, 1, 1234,'P0000025')");
-			stmt.execute("insert into transaction values(1000005, '28Jun2013', 'S', 69.97, 1, 1234,'P0000011')"); //24.99
-			stmt.execute("insert into transaction values(1000005, '28Jun2013', 'S', 69.97, 1, 1234,'P0000015')"); //26.99
-			stmt.execute("insert into transaction values(1000005, '28Jun2013', 'S', 69.97, 1, 1234,'P0000003')"); //17.99
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 19.99, 1, 1234,'P0000004')");
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 260, 1, 1234,'P0000018')");
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 24.99, 1, 1234,'P0000017')");
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 15.99, 2, 1234,'P0000006')");
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 360.95, 1, 1234,'P0000020')"); //360.95
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 31.99, 1, 1234,'P0000022')"); //31.99
+			stmt.execute("insert into transaction values(1000004, '15Dec2013', 'S', 589.99, 1, 1234,'P0000025')");
+			stmt.execute("insert into transaction values(1000005, '28Jun2013', 'S', 24.99, 1, 1234,'P0000011')"); //24.99
+			stmt.execute("insert into transaction values(1000005, '28Jun2013', 'S', 26.99, 1, 1234,'P0000015')"); //26.99
+			stmt.execute("insert into transaction values(1000005, '28Jun2013', 'S', 17.99, 1, 1234,'P0000003')"); //17.99
 			stmt.execute("insert into transaction values(1000007, '02Jul2013', 'S', 24.99, 1, 5678,'P0000017')"); //24.99
 			stmt.execute("insert into transaction values(1000008, '12Oct2013', 'R', 589.99, 1, 5678,'P0000025')"); //589.99
 			stmt.execute("insert into transaction values(1000009, '11Sep2013', 'S', 199.99, 1, 1234,'P0000024')"); //199.99
@@ -619,21 +619,21 @@ public class DBsql extends JFrame implements ActionListener
 			stmt.execute("insert into transaction values(1000011, '16Feb2013', 'S', 53.97, 3, 1234,'P0000003')"); //53.97
 			stmt.execute("insert into transaction values(1000012, '28Apr2013', 'S', 44.99, 1, 1234,'P0000016')"); //44.99
 			stmt.execute("insert into transaction values(1000013, '15Dec2013', 'S', 18.99, 1, 1234,'P0000002')"); //18.99
-			stmt.execute("insert into transaction values(1000014, '11Mar2013', 'S', 249.97, 2, 1234,'P0000017')"); //49.98
-			stmt.execute("insert into transaction values(1000014, '11Mar2013', 'S', 249.97, 1, 1234,'P0000024')"); //199.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000001')"); //16.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000004')"); //19.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000009')"); //26.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000011')"); //24.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000021')"); //119.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000014')"); //45.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000013')"); //21.99
-			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 637.88, 1, 1234,'P0000020')"); //360.95
-			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 1, 1234,'P0000012')"); //25.99
-			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 1, 1234,'P0000015')"); //26.99
-			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 2, 1234,'P0000007')"); //23.98
-			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 1, 1234,'P0000008')"); //16.99
-			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 18.99, 1, 1234,'P0000004')"); //19.99
+			stmt.execute("insert into transaction values(1000014, '11Mar2013', 'S', 24.99, 2, 1234,'P0000017')"); //49.98
+			stmt.execute("insert into transaction values(1000014, '11Mar2013', 'S', 199.99, 1, 1234,'P0000024')"); //199.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 16.99, 1, 1234,'P0000001')"); //16.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 19.99, 1, 1234,'P0000004')"); //19.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 26.99, 1, 1234,'P0000009')"); //26.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 24.99, 1, 1234,'P0000011')"); //24.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 119.99, 1, 1234,'P0000021')"); //119.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 45.99, 1, 1234,'P0000014')"); //45.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 21.99, 1, 1234,'P0000013')"); //21.99
+			stmt.execute("insert into transaction values(1000015, '26Nov2013', 'S', 360.95, 1, 1234,'P0000020')"); //360.95
+			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 25.99, 1, 1234,'P0000012')"); //25.99
+			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 26.99, 1, 1234,'P0000015')"); //26.99
+			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 11.99, 2, 1234,'P0000007')"); //23.98
+			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 16.99, 1, 1234,'P0000008')"); //16.99
+			stmt.execute("insert into transaction values(1000016, '30May2013', 'S', 19.99, 1, 1234,'P0000004')"); //19.99
 
 			ta.append("Data inserted successfully.");
 		} catch (SQLException ex)
